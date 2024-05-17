@@ -1,5 +1,5 @@
 pipeline {
-    tools {dockerTool  "docker" }
+  
     agent any
     tools {
         jdk 'Java17'
@@ -13,6 +13,7 @@ pipeline {
         IMAGE_NAME = "${DOCKER_USER}" + "/" + "${APP_NAME}"
         IMAGE_TAG = "${RELEASE}-${BUILD_NUMBER}"
     }
+    tools {dockerTool  "docker" }
     stages {
         stage("Cleanup workspace") {
             steps {
