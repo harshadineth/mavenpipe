@@ -1,4 +1,5 @@
 pipeline {
+    tools {dockerTool  "docker" }
     agent any
     tools {
         jdk 'Java17'
